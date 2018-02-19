@@ -1,0 +1,14 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+{% if candidate %}
+<img src="{{candidate.img_link}}" alt="image">
+{{candidate.candidate_name}}<br><br>
+現有票數 {{candidate.no_of_vote}}<br><br>
+<a href="{% url "polls:index" %}"><button>Back</button></a>
+{% else %}
+<h1>You must choose a candidate.</h1><br><br>
+<a href="{% url "polls:index" %}"><button>Back</button></a>
+{% endif %}
+
+{% endblock content %}

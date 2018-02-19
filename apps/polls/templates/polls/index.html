@@ -1,0 +1,11 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+<ul>
+{% for district in district_list %}
+<li><a href="{% url "polls:detail" id=district.id %}">{{district.district_name}}</a></li><br>
+{% endfor %}
+</ul>
+<br><br>
+
+{% endblock content %}
